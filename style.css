@@ -1,0 +1,269 @@
+/* pouzivame intuitivnejsi box model */
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+/*
+
+telefon do 640px, tablet 640px a vic, pc 1100px a vice
+
+ BARVY
+ sede pozadi      #e5e5e5
+ svetle fialova   #48418e
+ tmave fialova    #25133d
+
+ POUZITE PISMO
+ Source Sans Pro - rezy pisma light 300, regular 400 a bold 700
+https://fonts.google.com/specimen/Source+Sans+Pro
+
+pc verze:
+hero min-height 450px
+pacinka s telefonem absolutne napozicovat asi
+h1 fontsize 90px, fw 400
+h3 fontsize 36px, fw 300
+buttons fontsize 20px
+
+font-size flexboxu 20px, fw 700 nadpis, p 16px fw 400  - uz je v body
+
+font-family: 'Source Sans Pro', sans-serif;
+
+*/
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #e5e5e5;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.obal {
+  max-width: 450px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 5px 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #25133d;
+}
+
+.bcg-picture {
+  background-image: url(images/pozadi.jpg);
+  background-size: cover;
+  min-height: 400px;
+  position: relative;
+}
+
+.hero-heading {
+  color: white;
+  font-size: 60px;
+  font-weight: 400;
+  margin: 0;
+  padding: 50px 0 20px 50px;
+}
+
+.hero-p {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 0 0 5px 50px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+
+.btn-download {
+  color: white;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.btn-download:hover {
+  background-color: #48418e;
+}
+
+.btn-informace {
+  color: white;
+  padding: 10px 15px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.btn-informace:hover {
+  background-color: #48418e;
+}
+
+.telefon img {
+  display: block;
+  max-width: 40%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* ------ NABIDKA ------ */
+
+.nabidka {
+  text-align: center;
+  margin: 50px;
+}
+
+.cestuj,
+.chatuj {
+  margin-bottom: 50px;
+}
+
+.icon {
+  max-width: 80px;
+}
+
+.footer {
+  background-color: #48418e;
+  color: white;
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+
+@media screen and (min-width: 640px) {
+  .obal {
+    max-width: 600px;
+  }
+
+  .hero-heading {
+    font-size: 65px;
+  }
+
+  .buttons {
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 20px;
+  }
+
+  .nabidka {
+    margin: 80px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .obal {
+    max-width: 960px; /* obsah stránky je omezený do pruhu širokého max. 960px */
+    margin: 0 auto; /* pruh je na stránce vycentrovaný */
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  li:hover {
+    background-color: #48418e;
+  }
+
+  li a:hover {
+    color: white;
+  }
+
+  .super-appka {
+    margin-left: 50px;
+    padding-left: 0px;
+  }
+
+  .super-appka:hover {
+    background-color: white;
+  }
+
+  .bcg-picture {
+    min-height: 450px;
+  }
+
+  .hero-heading {
+    padding-top: 30px;
+    font-size: 90px;
+    font-weight: 400;
+  }
+
+  .hero-p {
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .buttons {
+    padding-bottom: 30px;
+    gap: 20px;
+  }
+
+  .btn-download {
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+
+  .btn-informace {
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+
+  .telefon img {
+    max-height: 95%;
+    max-width: 50%;
+  }
+
+  .nabidka {
+    display: flex;
+    margin: 50px;
+    gap: 30px;
+  }
+
+  .icon {
+    max-width: 70px;
+  }
+
+  .cestuj,
+  .chatuj {
+    margin-bottom: 0;
+  }
+
+  .footer {
+    padding: 10px 0;
+    margin: 0;
+  }
+}
